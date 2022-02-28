@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <title>Popol´s Movie Database</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
 
   <body>
@@ -13,5 +14,168 @@
       This movie database offers the possibility to search for movies and inform
       the user about the actors, genre, director.
     </p>
+  <table>
+
+  <tr>
+    <th>ENDPOINT RETURN</th>
+    <th>ENDPOINT URL</th>
+    <th>HTTP METHOD TYPE</th>
+    <th>QUERY PARAMETER</th>
+    <th>REQUEST BODY DATA FORMAT</th>
+    <th>RESPONSE BODY DATA FORMAT</th>
+  </tr>
+
+  <tr>
+    <td>Return a list of ALL movies to the user</td>
+    <td>/movies</td>
+    <td>GET</td>
+    <td>None</td>
+    <td>None</td>
+    <td>JSON object with all movies data</td>
+  </tr>
+
+  <tr>
+    <td>Return data about a single movie by title to the user</td>
+    <td>/movies/[title]</td>
+    <td>GET</td>
+    <td>:title</td>
+    <td>None</td>
+    <td>JSON object of the selected movie with following information:
+      <pre>
+        <code>
+        {
+        "Title": "Saving Private Ryan",
+        "Genre": {
+                  "Name": "War"
+                  },
+        "Director": {
+                      "Name": "Steven Spielberg",
+                      "Born": "1946"
+                    }
+        },
+        </code>
+      </pre>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Return data about a genre by name/title (e.g. "Thriller")</td>
+    <td>/movies/genre/[genre]</td>
+    <td>GET</td>
+    <td>:genreName</td>
+    <td>None</td>
+    <td>JSON object of the selected genre with following information:
+      <pre>
+        <code>
+        {
+        "Name": "Comedy"
+        }
+        </code>
+      </pre>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Return data about a director (e.g. Birth Year) by name</td>
+    <td>/movies/director/[director]</td>
+    <td>GET</td>
+    <td>:directorName</td>
+    <td>None</td>
+    <td>JSON object of the selected director with following information:
+      <pre>
+        <code>
+        {
+        "Name": "Steven Spielberg",
+        "Born": "1946"
+        }
+        </code>
+      </pre>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Allow new users to register</td>
+    <td>/users</td>
+    <td>POST</td>
+    <td>None</td>
+    <td>JSON object with the data to be added to the user:
+      <pre>
+        <code>
+        {
+        "Name": "Jean-Paul Belmondo",
+        "favoriteMovies": ["Forrest Gump", "Titanic", "Jurassic Park"]
+        }
+        </code>
+      </pre>
+    </td>
+    <td>JSON object with the data added and new user created (id generates automatically):
+      <pre>
+        <code>
+        {
+        "Name": "Jean-Paul Belmondo",
+        "favoriteMovies": ["Forrest Gump", "Titanic", "Jurassic Park"],
+        "id": 12345
+        }
+        </code>
+      </pre>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Allow users to update their user info (username)</td>
+    <td>/users/[id]</td>
+    <td>PUT</td>
+    <td>:id</td>
+    <td>JSON object with the new username:
+      <pre>
+        <code>
+        {
+        "Name": "Jean-Paul Gaultier",
+        }
+        </code>
+      </pre>
+    </td>
+    <td>JSON object with the username updated:
+      <pre>
+        <code>
+        {
+        "Name": "Jean-Paul Gaultier",
+        "favoriteMovies": ["Forrest Gump", "Titanic", "Jurassic Park"],
+        "id": 12345
+        }
+        </code>
+      </pre>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Allow users to add a movie to their list of favorites</td>
+    <td>/users/[id]/[movieTitle]</td>
+    <td>POST</td>
+    <td>:id, :movieTitle</td>
+    <td>None</td>
+    <td>`${movieTitle} has been added to user ${id}´s array`</td>
+  </tr>
+
+  <tr>
+    <td>Allow users to delete a movie from their list of favorites</td>
+    <td>/users/[id]/[movieTitle]</td>
+    <td>DELETE</td>
+    <td>:id, :movieTitle</td>
+    <td>None</td>
+    <td>`${movieTitle} has been removed from user ${id}´s array`</td>
+  </tr>
+
+  <tr>
+    <td>Allow users to delete their profile</td>
+    <td>/users/[id]</td>
+    <td>DELETE</td>
+    <td>:id</td>
+    <td>None</td>
+    <td>`User ${id} has been deleted`</td>
+  </tr>
+
+
+  </table>
   </body>
 </html>
