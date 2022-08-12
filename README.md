@@ -88,6 +88,6 @@ Documentation can be found here :point_right: https://github.com/Popol2411/movie
 
 #### Deployment to [Heroku](https://www.heroku.com/) :card_index_dividers: 
 
-#### Documentation with [JSDocs](https://jsdoc.app/) :memo::pencil:
+#### Documentation with [JSDocs](https://jsdoc.app/) :memo:
 
 ## :rocket:
