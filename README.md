@@ -30,10 +30,14 @@ myFlix API is the server-side of of a movies web application. The application pr
 
 ## :man_technologist: Get Started
 
+```
 https://github.com/Popol2411/movie_app.git
+```
 
 Download the repository on your machine 
 
+```
 npm install mongodb
+```
 
 ## :rocket: <a href="https://popol2411.github.io/pokedex-app/"> Live Demo</a> 
