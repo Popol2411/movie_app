@@ -1,6 +1,6 @@
 # :seedling: myFlix API
 
-myFlix API is the server-side of of a movies web application. The application provides users with access to information about different movies, their directors and the movie genre. Users are able to sign up, update their personal information, create a list of their favorite movies and remove movies from their favorite list.
+myFlix API is the server-side of a movies web application. The application provides users with access to information about different movies, their directors and the movie genre. Users are able to sign up, update their personal information, create a list of their favorite movies and remove movies from their favorite list.
 
 ## :speech_balloon: User Stories
 
