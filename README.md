@@ -74,6 +74,10 @@ Download the repository on your machine
 ```
 https://github.com/Popol2411/movie_app.git
 ```
+Install dependencies
+```
+npm install
+```
 Install MongoDB
 ```
 npm install mongodb
