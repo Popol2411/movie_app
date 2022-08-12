@@ -88,6 +88,6 @@ Documentation can be found here :point_right: https://github.com/Popol2411/movie
 
 #### Deployment to [Heroku](https://www.heroku.com/)
 
-#### Documentation with [JSDocs] https://jsdoc.app/
+#### Documentation with [JSDocs](https://jsdoc.app/)
 
 ## :rocket:
