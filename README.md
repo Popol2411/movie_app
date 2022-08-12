@@ -86,8 +86,8 @@ node index.js
 
 Documentation can be found here :point_right: https://github.com/Popol2411/movie_app/blob/main/public/documentation.html
 
-#### Deployment to [Heroku](https://www.heroku.com/)
+#### Deployment to [Heroku](https://www.heroku.com/) :card_index_dividers: 
 
-#### Documentation with [JSDocs](https://jsdoc.app/)
+#### Documentation with [JSDocs](https://jsdoc.app/) :memo::pencil:
 
 ## :rocket:
