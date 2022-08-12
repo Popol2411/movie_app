@@ -37,5 +37,8 @@ Install MongoDB
 ```
 npm install mongodb
 ```
-
+Start the server
+```
+node index.js
+```
 ## :rocket: <a href="https://popol2411.github.io/pokedex-app/"> Live Demo</a> 
