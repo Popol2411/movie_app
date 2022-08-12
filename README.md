@@ -86,8 +86,8 @@ node index.js
 
 Documentation can be found here :point_right: https://github.com/Popol2411/movie_app/blob/main/public/documentation.html
 
-#### Deployment to [<a href="https://www.heroku.com/">Heroku</a>](https://www.heroku.com/)
+#### Deployment to [Heroku](https://www.heroku.com/)
 
-#### Documentation with https://jsdoc.app/
+#### Documentation with [JSDocs] https://jsdoc.app/
 
 ## :rocket:
