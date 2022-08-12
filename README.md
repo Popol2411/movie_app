@@ -4,6 +4,24 @@ myFlix API is the server-side of of a movies web application. The application pr
 
 ## :key: Key Features 
 
+- Return a list of all movies to the user.
+
+- Return data (description, genre, director, image URL) about a single movie by title to the user.
+
+- Return data about a genre (description) by name/title. (e.g.,  “Thriller”) 
+
+- Return data about a director (bio) by name of the director.
+
+- Allow new users to register.
+
+- Allow users to update their user info (username, password, email, date of birth) 
+
+- Allow users to add a movie to their list of favorites.
+
+- Allow users to remove a movie from their list of favorites.
+
+- Allow existing users to unregister.
+
 ## :hammer_and_wrench: Built With 
 
 - JavaScript
