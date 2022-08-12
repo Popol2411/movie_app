@@ -2,6 +2,12 @@
 
 myFlix API is the server-side of of a movies web application. The application provides users with access to information about different movies, their directors and the movie genre. Users are able to sign up, update their personal information, create a list of their favorite movies and remove movies from their favorite list.
 
+## :speech_balloon: User Stories
+
+- As a user, I want to be able to receive information on movies, directors, and genres so that I can learn more about movies I’ve watched or am interested in.  
+
+- As a user, I want to be able to create a profile so I can save data about my favorite movies.
+
 ## :key: Key Features 
 
 - Return a list of all movies to the user.
