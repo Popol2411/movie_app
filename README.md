@@ -29,13 +29,11 @@ myFlix API is the server-side of of a movies web application. The application pr
 - The API must be deployed to Heroku.
 
 ## :man_technologist: Get Started
-
+Download the repository on your machine 
 ```
 https://github.com/Popol2411/movie_app.git
 ```
-
-Download the repository on your machine 
-
+Install MongoDB
 ```
 npm install mongodb
 ```
