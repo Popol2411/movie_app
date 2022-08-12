@@ -86,6 +86,6 @@ node index.js
 
 Documentation can be found here :point_right: https://github.com/Popol2411/movie_app/blob/main/public/documentation.html
 
-#### Deployement to Heroku
+#### Deployement to <a href="https://www.heroku.com/">Heroku</a>
 
 ## :rocket:
