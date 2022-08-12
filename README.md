@@ -82,7 +82,7 @@ Start the server
 ```
 node index.js
 ```
-#### Endpoints tested with Postman :computer:
+#### Endpoints tested with [Postman](https://www.postman.com/) :computer:
 
 Documentation can be found here :point_right: https://github.com/Popol2411/movie_app/blob/main/public/documentation.html
 
