@@ -97,7 +97,17 @@ app.post('/movies', passport.authenticate('jwt', { session: false }), (req, res)
     });
 });
 
-//CREATE User
+/**
+ * Endpoint to POST a new user.
+ * @method post
+ * @param {req.body} - JSON object format required:
+ * {
+ * "Username": "username",
+ * "Password": "password",
+ * "Email" : "username@gmail.com",
+ * "Birthday" : Date,
+ * }
+ */
 
 app.post('/users',
 
@@ -163,7 +173,13 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
     });
 });
 
-// Get a user by username
+/**
+ * Endpoint to GET single user object by username.
+ * @method get
+ * @param {req.headers} object - headers {"Authorization" : "Bearer <jwt>"}
+ * @returns {object} - JSON object of user details.
+ */
+
 app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOne({ Username: req.params.Username })
     .then((user) => {
@@ -175,7 +191,12 @@ app.get('/users/:Username', passport.authenticate('jwt', { session: false }), (r
     });
 });
 
-//READ Movie List
+/**
+ * Endpoint to GET entire movie database.
+ * @method get
+ * @param {req.headers} object - headers {"Authorization" : "Bearer <jwt>"}
+ * @returns {object} - JSON object of all movies' data
+ */
 
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => { //req = request, res = response
   Movies.find()
@@ -188,7 +209,12 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
     });
 });
 
-//READ Movie Title
+/**
+ * Endpoint to GET single movie object by title.
+ * @method get
+ * @param {req.headers} object - headers {"Authorization" : "Bearer <jwt>"}
+ * @returns {object} - JSON object of a single movie's data
+ */
 
 app.get('/movies/:title', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne({ Title: req.params.title }) // Find the movie by title
@@ -204,7 +230,12 @@ app.get('/movies/:title', passport.authenticate('jwt', { session: false }), (req
     });
 });
 
-//READ Movie Genre
+/**
+ * Endpoint to GET single genre object by name.
+ * @method get
+ * @param {req.headers} object - headers {"Authorization" : "Bearer <jwt>"}
+ * @returns {object} - JSON object of single genre.
+ */
 
 app.get('/genre/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne({ 'Genre.Name': req.params.Name }) // Find one movie with the genre by genre name
@@ -220,7 +251,12 @@ app.get('/genre/:Name', passport.authenticate('jwt', { session: false }), (req, 
     });
 });
 
-//READ Movie Director
+/**
+ * Endpoint to GET single director object by name.
+ * @method get
+ * @param {req.headers} object - headers {"Authorization" : "Bearer <jwt>"}
+ * @returns {object} - JSON object of single director.
+ */
 
 app.get('/director/:Name', passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.findOne({ 'Director.Name': req.params.Name }) // Find one movie with the director by name
@@ -250,7 +286,12 @@ app.get('/documentation', (req, res) => {
 
 app.use(express.static('public'));    //static file given access via express static
 
-//UPDATE User
+/**
+ * Endpoint to PUT (update) a single user object by username.
+ * @method put
+ * @param {req.headers} object - headers {"Authorization" : "Bearer <jwt>"}
+ * @returns {object} - JSON object of updated user details.
+ */
 
 app.put('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate(
@@ -275,7 +316,12 @@ app.put('/users/:Username', passport.authenticate('jwt', { session: false }), (r
     });
 });
 
-//UPDATE User Favorite Movies
+/**
+ * Endpoint to POST (add) a single movie by id to user favorites.
+ * @method post
+ * @param {req.headers} object - headers {"Authorization" : "Bearer <jwt>"}
+ * @returns {object} - JSON object of updated user details.
+ */
 
 // Add a movie to a user's list of favorites
 app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -293,7 +339,12 @@ app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { sess
     });
 });
 
-//DELETE User Favorite Movies
+/**
+ * Endpoint to DELETE a single movie by id from user favorites.
+ * @method delete
+ * @param {req.headers} object - headers {"Authorization" : "Bearer <jwt>"}
+ * @returns {object} - JSON object of updated user details.
+ */
 
 app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndUpdate({ Username: req.params.Username },
@@ -310,7 +361,13 @@ app.delete('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { se
     });
 });
 
-// Delete a user by username
+/**
+ * Endpoint to DELETE a user.
+ * @method delete
+ * @param {req.headers} object - headers {"Authorization" : "Bearer <jwt>"}
+ * @returns {string} - confirmation message.
+ */
+
 app.delete('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
   Users.findOneAndRemove({ Username: req.params.Username })
     .then((user) => {
