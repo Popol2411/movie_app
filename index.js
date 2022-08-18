@@ -9,7 +9,7 @@ const express = require('express'), //express framework
   Users = Models.User; //model name in models.js
 // all const are being written one after another and seprated by a colon to avoid re-writting "const" multiple times
 
-/* mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });  //link to database to perform CRUD */
+// mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });  //link to database to perform CRUD */
 mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true }); //link to MongoDB, online
 
 app.use(morgan('common'));
@@ -293,14 +293,16 @@ app.use(express.static('public'));    //static file given access via express sta
  * @returns {object} - JSON object of updated user details.
  */
 
+
 app.put('/users/:Username', passport.authenticate('jwt', { session: false }), (req, res) => {
+  let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOneAndUpdate(
     { Username: req.params.Username },
     {
       $set:
       {
         Username: req.body.Username,
-        Password: req.body.Password,
+        Password: hashedPassword,
         Email: req.body.Email,
         Birthday: req.body.Birthday,
       },
